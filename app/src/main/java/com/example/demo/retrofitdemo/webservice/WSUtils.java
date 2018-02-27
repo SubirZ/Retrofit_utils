@@ -1,10 +1,7 @@
-package com.example.retrofit.webservice;
+package com.example.demo.retrofitdemo.webservice;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
-
-import com.example.retrofit.BuildConfig;
-import com.example.retrofit.model.BaseModel;
+import com.example.demo.retrofitdemo.BuildConfig;
+import com.example.demo.retrofitdemo.model.BaseModel;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;

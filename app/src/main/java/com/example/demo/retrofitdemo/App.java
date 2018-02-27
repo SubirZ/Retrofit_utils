@@ -1,6 +1,9 @@
-package com.example.retofit;
+package com.example.demo.retrofitdemo;
 
 import android.app.Application;
+
+import com.example.demo.retrofitdemo.webservice.WSUtils;
+import com.example.demo.retrofitdemo.webservice.WsCallback;
 
 import java.io.IOException;
 
@@ -9,8 +12,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
+ * Created by SC on 27/02/18.
  * application class for retrofit demo
  */
+
 public class App extends Application {
     private static App mAppInstance;
     private static WsCallback retrofitInstance;
@@ -37,7 +42,7 @@ public class App extends Application {
                 public Response intercept(Chain chain) throws IOException {
 
                     Request.Builder builder = chain.request().newBuilder();
-                    builder.addHeader(Constants.HEADER_AUTH, "Bearer " + Preference.getInstance().mSharedPreferences.getString(Preference.PREFERENCE_TOKEN, ""));
+//                    builder.addHeader(Constants.HEADER_AUTH, "Bearer " + Preference.getInstance().mSharedPreferences.getString(Preference.PREFERENCE_TOKEN, ""));
                     Request request = builder.build();
 
                     return chain.proceed(request);
@@ -50,5 +55,6 @@ public class App extends Application {
     public static WsCallback getRetrofitInstance() {
         return retrofitInstance;
     }
+
 
 }
